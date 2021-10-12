@@ -4,9 +4,9 @@
 #
 Name     : clr-avx-tools
 Version  : 19
-Release  : 21
-URL      : https://github.com/clearlinux/clr-avx-tools/archive/v18/clr-avx-tools-19.tar.gz
-Source0  : https://github.com/clearlinux/clr-avx-tools/archive/v18/clr-avx-tools-19.tar.gz
+Release  : 22
+URL      : https://github.com/clearlinux/clr-avx-tools/archive/v19/clr-avx-tools-19.tar.gz
+Source0  : https://github.com/clearlinux/clr-avx-tools/archive/v19/clr-avx-tools-19.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -44,15 +44,15 @@ license components for the clr-avx-tools package.
 
 
 %prep
-%setup -q -n clr-avx-tools-18
-cd %{_builddir}/clr-avx-tools-18
+%setup -q -n clr-avx-tools-19
+cd %{_builddir}/clr-avx-tools-19
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1634079090
+export SOURCE_DATE_EPOCH=1634080460
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -65,10 +65,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1634079090
+export SOURCE_DATE_EPOCH=1634080460
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/clr-avx-tools
-cp %{_builddir}/clr-avx-tools-18/COPYING %{buildroot}/usr/share/package-licenses/clr-avx-tools/04319952ed7b0f3b3a70ae4d5d9f954317b8f970
+cp %{_builddir}/clr-avx-tools-19/COPYING %{buildroot}/usr/share/package-licenses/clr-avx-tools/04319952ed7b0f3b3a70ae4d5d9f954317b8f970
 %make_install
 
 %files
