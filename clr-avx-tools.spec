@@ -4,7 +4,7 @@
 #
 Name     : clr-avx-tools
 Version  : 42
-Release  : 46
+Release  : 47
 URL      : https://github.com/clearlinux/clr-avx-tools/archive/v41/clr-avx-tools-42.tar.gz
 Source0  : https://github.com/clearlinux/clr-avx-tools/archive/v41/clr-avx-tools-42.tar.gz
 Summary  : No detailed summary available
