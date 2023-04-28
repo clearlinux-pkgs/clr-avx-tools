@@ -4,10 +4,10 @@
 # Using build pattern: make
 #
 Name     : clr-avx-tools
-Version  : 50
-Release  : 56
-URL      : https://github.com/clearlinux/clr-avx-tools/archive/v50/clr-avx-tools-50.tar.gz
-Source0  : https://github.com/clearlinux/clr-avx-tools/archive/v50/clr-avx-tools-50.tar.gz
+Version  : 51
+Release  : 57
+URL      : https://github.com/clearlinux/clr-avx-tools/archive/v51/clr-avx-tools-51.tar.gz
+Source0  : https://github.com/clearlinux/clr-avx-tools/archive/v51/clr-avx-tools-51.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -48,15 +48,15 @@ license components for the clr-avx-tools package.
 
 
 %prep
-%setup -q -n clr-avx-tools-50
-cd %{_builddir}/clr-avx-tools-50
+%setup -q -n clr-avx-tools-51
+cd %{_builddir}/clr-avx-tools-51
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681749811
+export SOURCE_DATE_EPOCH=1682696655
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -69,7 +69,7 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1681749811
+export SOURCE_DATE_EPOCH=1682696655
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/clr-avx-tools
 cp %{_builddir}/clr-avx-tools-%{version}/COPYING %{buildroot}/usr/share/package-licenses/clr-avx-tools/04319952ed7b0f3b3a70ae4d5d9f954317b8f970 || :
