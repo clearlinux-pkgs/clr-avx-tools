@@ -4,10 +4,10 @@
 # Using build pattern: make
 #
 Name     : clr-avx-tools
-Version  : 51
-Release  : 57
-URL      : https://github.com/clearlinux/clr-avx-tools/archive/v51/clr-avx-tools-51.tar.gz
-Source0  : https://github.com/clearlinux/clr-avx-tools/archive/v51/clr-avx-tools-51.tar.gz
+Version  : 52
+Release  : 58
+URL      : https://github.com/clearlinux/clr-avx-tools/archive/v52/clr-avx-tools-52.tar.gz
+Source0  : https://github.com/clearlinux/clr-avx-tools/archive/v52/clr-avx-tools-52.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -48,28 +48,28 @@ license components for the clr-avx-tools package.
 
 
 %prep
-%setup -q -n clr-avx-tools-51
-cd %{_builddir}/clr-avx-tools-51
+%setup -q -n clr-avx-tools-52
+cd %{_builddir}/clr-avx-tools-52
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682696655
+export SOURCE_DATE_EPOCH=1684374708
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1682696655
+export SOURCE_DATE_EPOCH=1684374708
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/clr-avx-tools
 cp %{_builddir}/clr-avx-tools-%{version}/COPYING %{buildroot}/usr/share/package-licenses/clr-avx-tools/04319952ed7b0f3b3a70ae4d5d9f954317b8f970 || :
