@@ -1,0 +1,25 @@
+From e87eb1a24aa052b3be39a50b999b483d9f9b28f6 Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Thu, 8 Feb 2024 09:13:41 -0800
+Subject: [PATCH] temporary hack for apx disable
+
+---
+ elf-move.py | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/elf-move.py b/elf-move.py
+index c43fce3..e1d7ec8 100755
+--- a/elf-move.py
++++ b/elf-move.py
+@@ -88,8 +88,6 @@ def move_content(args, filemap):
+         optimized_prefix = 'V3'
+     elif args.btype == 'avx512':
+         optimized_prefix = 'V4'
+-    elif args.btype == 'apx':
+-        optimized_prefix = 'VA'
+     else:
+         return
+     optimized_dir = os.path.join(args.targetdir, optimized_prefix)
+-- 
+2.43.0
+
