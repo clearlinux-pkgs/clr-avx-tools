@@ -7,7 +7,7 @@
 #
 Name     : clr-avx-tools
 Version  : 56
-Release  : 63
+Release  : 64
 URL      : https://github.com/clearlinux/clr-avx-tools/archive/v56/clr-avx-tools-56.tar.gz
 Source0  : https://github.com/clearlinux/clr-avx-tools/archive/v56/clr-avx-tools-56.tar.gz
 Summary  : No detailed summary available
