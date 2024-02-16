@@ -7,7 +7,7 @@
 #
 Name     : clr-avx-tools
 Version  : 56
-Release  : 64
+Release  : 65
 URL      : https://github.com/clearlinux/clr-avx-tools/archive/v56/clr-avx-tools-56.tar.gz
 Source0  : https://github.com/clearlinux/clr-avx-tools/archive/v56/clr-avx-tools-56.tar.gz
 Summary  : No detailed summary available
@@ -19,7 +19,6 @@ Requires: clr-avx-tools-license = %{version}-%{release}
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
-Patch1: 0001-temporary-hack-for-apx-disable.patch
 
 %description
 No detailed description available
@@ -53,7 +52,6 @@ license components for the clr-avx-tools package.
 %prep
 %setup -q -n clr-avx-tools-56
 cd %{_builddir}/clr-avx-tools-56
-%patch -P 1 -p1
 pushd ..
 cp -a clr-avx-tools-56 buildapx
 popd
@@ -63,7 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1707412496
+export SOURCE_DATE_EPOCH=1708122037
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -107,7 +105,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1707412496
+export SOURCE_DATE_EPOCH=1708122037
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/clr-avx-tools
 cp %{_builddir}/clr-avx-tools-%{version}/COPYING %{buildroot}/usr/share/package-licenses/clr-avx-tools/04319952ed7b0f3b3a70ae4d5d9f954317b8f970 || :
